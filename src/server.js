@@ -30,7 +30,8 @@ const queryAndThen = (query, res, cb) => {
 };
 
 const findPostMiddleware = (req, res, next) => {
-  queryAndThen(Post.findOne({ soID: req.params.soID }), res, (post) => {
+  queryAndThen(Post.findOne({ 
+    soID: req.params.soID }), res, (post) => {
     if (!post) {
       sendUserError("Couldn't find post with given ID", res);
       return;
