@@ -9,7 +9,7 @@ server.use(bodyParser.json());
 
 const sendUserError = (err, res) => {
 	res.status(STATUS_USER_ERROR);
-	if (typeof err = 'string') {
+	if (typeof err === 'string') {
 		res.json({ error: err });
 	} else {
 		res.json(err);
